@@ -28,10 +28,11 @@
   background-color: #eab308;
   display: grid;
   grid-template-columns: 1fr;
-  /* gap: 38px; */
+  grid-template-rows: 0.7fr 3fr 1.5fr;
+  gap: 25px;
   padding: 12px;
-  padding-left: 33%;
   position: absolute;
+  padding-left: 25%;
 }
 
 .logo-sidebar {
@@ -39,13 +40,13 @@
   grid-template-columns: 25px 1fr;
   gap: 15px;
   align-items: center;
-  /* margin-bottom: 15px; */
+  cursor: pointer;
 }
 
 .logo-sidebar-active {
-  display: grid;
   grid-template-columns: 40px 1fr;
   gap: 20px;
+  /* height: 50px; */
   align-items: center;
   /* margin-bottom: 15px; */
 }
@@ -69,19 +70,45 @@
 }
 
 
-.sidebar ul {
+.list-1-sidebar,
+.list-2-sidebar {
   list-style: none;
   display: grid;
-  gap: 15px;
+  gap: 8px;
   grid-template-columns: 20px 1fr;
   align-items: center;
   margin-left: 5px;
 }
 
+.list-2-sidebar {
+  align-items: center;
+}
+
+
+.sidebar > ul > li {
+  cursor: pointer;
+  width: fit-content;
+}
+
+.sidebar-ul-active {
+  column-gap: 36px;
+  grid-template-columns: 25px 1fr;
+}
 
 svg {
   width: 18px;
   height: 18px;
+  cursor: pointer;
+}
+
+.sidebar-svg-active {
+  width: 75px;
+  height: 28px;
+}
+
+.sidebar-li-active {
+  font-size: 18px;
+  font-weight: bold;
 }
 
 
@@ -153,31 +180,14 @@ svg {
 }
 
 button {
-  background-color: #1992d4;
-  color: white;
+  background-color: #af8708;
+  color: black;
   border-radius: 16px;
   font-size: 18px;
   border: none;
   padding: 5px max(15px, 1rem);
   cursor: pointer;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
