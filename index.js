@@ -11,7 +11,8 @@ const sidebarLiReveal = document.querySelectorAll('li');
 
 // EVENT LISTENERS
 dashboardButton.addEventListener('click', () => {
-  sidebarReveal.classList.add('sidebar-active');
+  // sidebarReveal.classList.add('sidebar-active');
+  sidebarReveal.classList.toggle('sidebar-active');
   logoSidebarReveal.classList.add('logo-sidebar-active');
   sidebarDashboardLogo.classList.add('sidebar-dashboard-logo-active');
   sidebarDashboardPReveal.classList.add('sidebar-dashboard-p-active');
