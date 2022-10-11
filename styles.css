@@ -13,15 +13,12 @@
   width: 200px;
   background-color: #f2b15c;
   display: grid;
-  grid-template-columns: 200px;
-  gap: 38px;
   padding: 12px;
   display: none;
   position: absolute;
 }
 
 .sidebar-active {
-  /* display: initial; */
   width: 100%;
   height: 100%;
   display: grid;
@@ -29,10 +26,10 @@
   grid-template-rows: 0.7fr 3fr 1.5fr;
   gap: 25px;
   padding: 12px;
-  position: absolute;
-  padding-left: 23%;
+  /* padding-left: 23%; */
   /* trying to get fullscreen sidebar and stop scrolling */
   position: fixed;
+  justify-items: center;
 }
 
 .logo-sidebar {
@@ -94,6 +91,12 @@
 .sidebar-ul-active {
   column-gap: 36px;
   grid-template-columns: 25px 1fr;
+}
+
+.list-2-sidebar-active {
+  margin-right: 44px;
+  align-content: start;
+  row-gap: 38px;
 }
 
 svg {
@@ -191,14 +194,20 @@ svg {
 }
 
 .action-container-button {
-  background-color: #f2b15c;
+  background-color: #daf6ff;
+  border: 1px solid #a5ada7;
   color: black;
   border-radius: 16px;
   font-size: 18px;
-  border: none;
   padding: 5px max(15px, 1rem);
   cursor: pointer;
   font-weight: bold;
+}
+
+.projects-container {
+ display: grid;
+ padding-top: 16px;
+ grid-template-rows: 40px 1fr;
 }
 
 .title {
@@ -209,6 +218,9 @@ svg {
   text-align: center;
   padding: 8px;
   height: 40px;
+  border-radius: 20px;
+  width: 90%;
+  justify-self: center;
 }
 
 .projects-title {
@@ -266,7 +278,7 @@ svg {
 
 .announcements-container {
   display: grid;
-  row-gap: 20px;
+  row-gap: 12px;
   margin-bottom: 20px;
 }
 
@@ -301,7 +313,7 @@ svg {
 
 .trending-container {
   display: grid;
-  row-gap: 20px;
+  row-gap: 12px;
   margin-bottom: 20px;
 }
 
@@ -345,8 +357,68 @@ svg {
     grid-template-columns: 1fr 1fr;
  }
 
+@media only screen and (min-width: 800px) {
+  .action-container {
+    display: grid;   
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .left-action-container {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    column-gap: 8px;
+    align-items: center;
+    margin-left: 33px;
+  }
+  
+  .salute {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .salute > p:nth-child(2n) {
+    font-weight: bold;
+  }
+
+.right-action-container {
+align-items: center;
+}
+}
+
 
 @media only screen and (min-width: 1000px) {
+  .sidebar-active {
+      margin-top: 18px;
+    }
+
+  .nav-container {
+    /* position: static; */
+    align-items: center;
+    height: 60px;
+    padding-top: 16px;
+    border-bottom: none;
+    box-shadow: none;
+    padding-left: 48px;
+  }
+  
+  .search-bar {
+    flex-grow: 0;
+    width: 500px;
+  }
+  
+  .right-container {
+    margin-left: auto;
+    gap: 3rem;
+    justify-items: space-around;
+    margin-right: 42px;
+  }
+  
+  .right-action-container {
+    justify-content: end;
+    gap: 30px;
+    margin-right: 42px;
+  }
+  
   .rightpanel-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -376,22 +448,61 @@ svg {
   }
 
   .sidebar {
-    display: initial;
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
     position: static;
     height: 100vh;
     width: 270px;
+    align-items: start;
+    /* padding: 12px; */
   }    
+
+  .logo-sidebar {
+    gap: 25px; 
+    height: fit-content;
+    margin-top: 8px;
+  }
+  
+  .sidebar-dashboard-p {
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+  .list-1-sidebar,
+  .list-2-sidebar {
+    height: fit-content;
+    font-weight: bold;
+    column-gap: 20px;
+    row-gap: 22px;
+    margin-left: 10px;
+  }
+  
+  svg {
+    scale: 1.3;
+  }
+
+  .main-container {
+  padding-right: 18px;
+}
 
   .nav-container {
     position: static;
     align-items: center;
     height: 60px;
+    margin-top: 8px;
+    border-bottom: none;
+    box-shadow: none;
+  }
+
+  .dashboard-logo {
+    cursor: initial;
   }
 
   .action-container {
-      border-bottom: none;
-      box-shadow: none;
-    }
+    border-bottom: none;
+    box-shadow: none;
+  }
 
   .pat-container {
     display: grid;
@@ -399,9 +510,14 @@ svg {
     gap: 15px;
   }
 
+  .projects-container {
+   padding-top: 0;
+  }
+
   .project-cards-container {
     row-gap: 32px;
   }
+
 
   .rightpanel-container {
     display: grid;
